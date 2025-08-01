@@ -82,9 +82,9 @@ jobs:
       uses: amondnet/vercel-action@v25
       id: vercel-action
       with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+        vercel-token: Pc7ESlpogynSmi3OOZit8g02
+        vercel-org-id: 2WwUXokENzZvtrhmYU6UEgAZ
+        vercel-project-id: prj_1D7rvVdq2GQMoFOEwxaQJ1TsQcRv
         vercel-args: '--prod'
 
     - name: Comment deployment URL
