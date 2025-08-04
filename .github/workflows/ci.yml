@@ -3,6 +3,8 @@ name: Deploy to Vercel
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   deploy:
@@ -34,13 +36,14 @@ jobs:
           vercel-project-id: prj_1D7rvVdq2GQMoFOEwxaQJ1TsQcRv
           vercel-args: '--prod'
 
-      - name: Comment deployment URL
+      - name: Comment deployment URL on PR
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
-            github.rest.repos.createCommitComment({
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              commit_sha: context.sha,
-              body: '🚀 Deployed to: ${{ steps.vercel-action.outputs.preview-url }}'
+              body: `🚀 Deployed to: ${{ steps.vercel-action.outputs.preview-url }}`
             })
