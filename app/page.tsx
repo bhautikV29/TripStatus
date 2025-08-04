@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { TripCard } from '@/components/trips/TripCard';
 import { useTripStore } from '@/lib/store';
+import type { Trip } from '@/types/trip';
 
 export default function Dashboard() {
   const { trips, setTrips, setLoading } = useTripStore();

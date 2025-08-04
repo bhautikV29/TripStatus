@@ -22,7 +22,7 @@ interface TripStore {
 
 export const useTripStore = create<TripStore>()(
   persist(
-    (set, get) => ({
+    (set, _get) => ({
       trips: [],
       selectedTrip: null,
       weather: {},

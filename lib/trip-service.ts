@@ -3,7 +3,7 @@ import { mockTrips } from './mock-data';
 
 // In-memory storage for newly created trips
 // In a real app, this would be a database
-let createdTrips: Trip[] = [];
+const createdTrips: Trip[] = [];
 
 export class TripService {
   static getAllTrips(): Trip[] {
@@ -32,8 +32,8 @@ export class TripService {
       return null;
     }
 
-    createdTrips[tripIndex] = { ...createdTrips[tripIndex], ...updates };
-    return createdTrips[tripIndex];
+    createdTrips[tripIndex] = { ...createdTrips[tripIndex], ...updates } as Trip;
+    return createdTrips[tripIndex] ?? null;
   }
 
   static deleteTrip(id: string): boolean {

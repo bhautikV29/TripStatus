@@ -11,7 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useTripStore } from '@/lib/store';
-import { Trip, DayItinerary, TravelMode } from '@/types/trip';
+import { Trip, DayItinerary } from '@/types/trip';
 
 export default function NewTripPage() {
   const router = useRouter();
